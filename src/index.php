@@ -1,3 +1,7 @@
+<!--  Kate McCarthy
+      01/2021
+      MedSched Page 1 (medication form) -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -140,18 +144,6 @@
     var increment = parseInt(document.getElementById('countMeds').value, 10) + 1;
     document.getElementById('countMeds').setAttribute('value', increment);
 
-    //var med1 = document.getElementById("med" + increment.toString());
-
-    /*var pastMed = document.getElementById("med0");
-    var cloneMed = pastMed.cloneNode(true);
-
-    i = i + 1;
-
-    cloneMed.id = 'med' + i;
-
-    cloneMed.find('input').each(function() {
-      this.name = this.name.replace('[0]', '['+i+']');
-    });*/
     var allMeds = document.getElementById('allMeds');
 
     var newMed = document.createElement('div');
@@ -168,25 +160,6 @@
 
     allMeds.appendChild(newMed);
 
-    //pastMed.after(cloneMed);
-
-    /*med1.getElementById("name" + numMeds.toString()).setAttribute('name',"info[" + increment.toString() + "][name]");
-    med1.getElementById("dose" + numMeds.toString()).setAttribute('name',"info[" + increment.toString() + "][dose]");
-    med1.getElementById("units" + numMeds.toString()).setAttribute('name',"info[" + increment.toString() + "][units]");
-    med1.getElementById("hr" + numMeds.toString()).setAttribute('name',"info[" + increment.toString() + "][hr]");
-    med1.getElementById("min" + numMeds.toString()).setAttribute('name',"info[" + increment.toString() + "][min]");
-
-    med1.getElementById("name" + numMeds.toString()).id = "name" + increment.toString();
-    med1.getElementById("dose" + numMeds.toString()).id = "dose" + increment.toString();
-    med1.getElementById("units" + numMeds.toString()).id = "units" + increment.toString();
-    med1.getElementById("hr" + numMeds.toString()).id = "hr" + increment.toString();
-    med1.getElementById("min" + numMeds.toString()).id = "hr" + increment.toString();*/
-
-    //med1.getElementById("name" + increment.toString().setAttribute('value', "</?php echo $dose[1];?>");
-
-    //numMeds = numMeds + 1;
-
-    //med1.style.display = "block";
   }
 
   function addDose(num) {
@@ -211,7 +184,6 @@
   function removeDose(nMed, nDose) { // remove a scheduled dose from a medication
     targetDose = document.getElementById(nMed + 'dose' + nDose);
     targetDose.parentNode.removeChild(targetDose);
-    //doses[nMed] = doses[nMed] - 1;
 
     var secretId = 'secret' + nMed;
     decrementDose = parseInt(document.getElementById(secretId).value, 10) - 1;

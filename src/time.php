@@ -1,3 +1,7 @@
+<!--  Kate McCarthy
+      01/2021
+      MedSched Page 2 (medication schedule) -->
+
 <!DOCTYPE HTML>
 <html>
 <head>
