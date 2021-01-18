@@ -14,13 +14,16 @@ HTML, CSS, Javascript, & PHP
 ### Source Code:
 There are four files within the src folder:
 
-- index.php
+- **index.php**
     - The first page of the MedSched website
     - Contains the form to enter medications
-- main.css
+    
+- **main.css**
     - Responsible for styling index.php
-- time.php
+    
+- **time.php**
     - The page that the 'Submit' button of index.php redirects to
     - Displays the timetable of medications by rearranging form input
-- schedule.css
+    
+- **schedule.css**
     - Responsible for styling time.php
