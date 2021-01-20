@@ -85,22 +85,41 @@
 
   <div id="allMeds">
 
+    <!-- only one medication is visible upon page load, until the user clicks "Add A Medication" -->
     <div id='med0' class='med'>
 
       <div class='row'>
+
+      <!-- hidden variable to count number of doses -->
       <input type='hidden' id='secret0' name='info[0][numDoses]' value='1'>
+
+      <!-- name of the medication -->
       <p>Medication Name:<input type='text' name='info[0][name]'></p>
       <br>
+
+      <!-- quantity and unit of a dose -->
       <p>Dose: <input type='number' name='info[0][dose]'>   Units: <input type='text' name='info[0][units]' min='1'></p>
       <br><br>
+
         <div id='doses0'>
+
+          <!-- the first scheduled dose of the medication -->
           <div id='0dose0' class='time'>
+
+            <!-- button to remove dose -->
             <p>Dose &emsp; <input type='button' class = 'remove' value='Remove Dose' onclick='removeDose(0,0)'></p>
+
+            <!-- hour of scheduled dose -->
             <label>Hour (24-Hour Clock)</label><input type='number' name='info[0][0hr0]' min='00' max='23' placeholder='00'>
+
+            <!-- minute of scheduled dose -->
             <label>Minute</label><input type='number' name='info[0][min0]' min='00' max='59' placeholder='00'>
+
           </div>
         </div>
         <br><br>
+
+        <!-- button to schedule additional times to take  medication 0 by calling addDose(0) -->
         <input type='button' class='add' value='Schedule Another Dose' onclick='addDose(0)'>
 
       <br><br>
@@ -112,6 +131,7 @@
 
   <div class="row">
   <br>
+  <!-- button to add unlimited additional medications by calling addMedication() -->
   <input type="button" class='add' name="add" value="Add A Medication" onclick="addMedication()">
   <br><br>
   </div>
@@ -120,8 +140,13 @@
 
   <div class="row">
   <br>
+
+  <!-- hidden variable that tracks the total number of medications -->
   <input type='hidden' id='countMeds' name='numMeds' value='1'>
+
+  <!-- button to submit the form and redirect to time.php -->
   <input type="submit" class="submit" name="submit" value="Create Schedule">
+
   <br><br>
   </div>
 
@@ -137,6 +162,9 @@
     doses.push(0);
   }
 
+  /*
+   * Inserts another medication with identical input fields and buttons at the bottom of the form.
+   */
   function addMedication() {
 
     i = i + 1;
@@ -162,6 +190,11 @@
 
   }
 
+  /*
+   * @param num   the ID of the selected medication
+   *
+   * Inserts another dose with identical input fields and buttons below the previous dose.
+   */
   function addDose(num) {
     var newDose = document.createElement('div');
     var numDoses;
@@ -181,6 +214,13 @@
     document.getElementById('doses' + num).appendChild(newDose);
   }
 
+  /*
+   * @param nMed  the ID of the selected medication
+   * @param nDose the ID of the selected dose
+   *
+   * Removes the selected dose from the medication; any doses below the
+   * removed dose shift up to maintain consistent formatting.
+   */
   function removeDose(nMed, nDose) { // remove a scheduled dose from a medication
     targetDose = document.getElementById(nMed + 'dose' + nDose);
     targetDose.parentNode.removeChild(targetDose);
@@ -190,6 +230,12 @@
     document.getElementById(secretId).setAttribute('value', decrementDose);
   }
 
+  /*
+   * @param nMed  the ID of the selected medication
+   *
+   * Removes the selected medication from the form; any medications below
+   * the removed one shift up to maintain consistent formatting.
+   */
   function removeMed(nMed) { // remove a medication
     targetMed = document.getElementById('med' + nMed);
     targetMed.parentNode.removeChild(targetMed);
