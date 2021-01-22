@@ -317,6 +317,7 @@ function onOpen() {
             //add in hour and hour:30 labels between the two doses
             for (var k = 1; k < timeDif; k++) {
 
+              // determine the half of day in which the dose takes place
               var hour = hr - k;
 
               if (hour == startDay && hour < 12) halfOfDay = "<b>a.m.</b>";
@@ -358,6 +359,7 @@ function onOpen() {
           //add in hour and hour:30 labels
           for (var k = 1; k < timeDif; k++) {
 
+            // determine the half of day in which the dose takes place
             var hour = hr - k;
 
             if (hour == startDay && hour < 12) halfOfDay = "<b>a.m.</b>";
