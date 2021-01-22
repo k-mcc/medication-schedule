@@ -80,7 +80,7 @@
 
 
 <h2>Post-Op Medication Schedule</h2>
-<p><span class="error">* required field</span></p>
+<!--<p><span class="error">* required field</span></p>-->
 <form method="post" action="time.php">
 
   <div id="allMeds">
