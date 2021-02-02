@@ -1,6 +1,10 @@
 <!--  Kate McCarthy
       01/2021
-      MedSched Page 2 (medication schedule) -->
+      MedSched Page 2 (medication schedule)
+
+      MedSched makes tracking the post-op medications of surgical patients a breeze.
+      time.php contains the code that generates the schedule from the information entered into the form of index.php.
+-->
 
 <!DOCTYPE HTML>
 <html>

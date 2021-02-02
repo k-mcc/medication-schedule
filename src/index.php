@@ -1,6 +1,11 @@
 <!--  Kate McCarthy
       01/2021
-      MedSched Page 1 (medication form) -->
+      MedSched Page 1 (medication form)
+
+      MedSched makes tracking the post-op medications of surgical patients a breeze.
+      index.php encodes the medication form where patients can schedule each dose.
+      When the "Create Schedule" button is clicked, the user is redirected to time.php to view their schedule.
+-->
 
 <!DOCTYPE HTML>
 <html>
