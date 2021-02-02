@@ -27,3 +27,6 @@ There are four files within the src folder:
     
 - [**schedule.css**](src/schedule.css)
     - Responsible for styling time.php
+
+### Sample Medication Schedule:
+![MedSched format](Images/display.png)
